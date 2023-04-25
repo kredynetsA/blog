@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "colors";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,10 +46,32 @@ table {
   border-spacing: 0;
 }
 
-
 .container {
   max-width: 1224px;
   padding: 0 10px;
   width: 100%;
   margin: 0 auto;
 }
+
+.company-button {
+  border-radius: 5px;
+  padding: 8px 10px;
+  background-color: #fff;
+  margin-right: 20px;
+  border: none;
+  box-shadow: 4px 4px 8px rgba(0,0,0,.2);
+  &:hover {
+    color: $color-light-blue;
+  }
+  &__accent {
+    background-color: $color-accent;
+    &:hover {
+      color: $color-font-white;
+    }
+  }
+  &__grey {
+    background-color: $color-font-white;
+  }
+}
+
+

@@ -1,0 +1,95 @@
+@import "../colors";
+.promo-page {
+  background: url("https://7-price.com/img/blogs/blog_bg.png");
+}
+
+.promo {
+  display: flex;
+  justify-content: space-between;
+  &_info {
+    color: $color-font-white;
+    align-self: center;
+  }
+  &_title {
+    font-size: 28px;
+    color: $color-font-white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  &_desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  &_img {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 880px) {
+  .promo {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    text-align: center;
+    &_info {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.blog-page {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.list {
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+  &_item {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  &_img {
+    width: 100%;
+    margin-bottom: 20px;
+    &:hover {
+      box-shadow: 0 1px 12px rgba(0,0,0,.5);
+    }
+  }
+  &_desc {
+    color: $color-font-dark;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 770px) {
+  .blog-page {
+    padding-top: 0;
+  }
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 425px) {
+  .blog-btn {
+    display: none;
+  }
+}
