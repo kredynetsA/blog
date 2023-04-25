@@ -1,0 +1,61 @@
+@import "../../../colors";
+.blog-page {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.list {
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+  &_item {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  &_img {
+    width: 100%;
+    margin-bottom: 20px;
+    &:hover {
+      box-shadow: 0 1px 12px rgba(0,0,0,.5);
+    }
+  }
+  &_desc {
+    color: $color-font-dark;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    a {
+      text-decoration: none;
+      color: $color-font-dark;
+    }
+    &:hover {
+      color: $color-accent;
+
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 770px) {
+  .blog-page {
+    padding-top: 0;
+  }
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 425px) {
+  .blog-btn {
+    display: none;
+  }
+}
