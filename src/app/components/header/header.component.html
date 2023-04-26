@@ -11,7 +11,7 @@
         <nav class="nav">
           <div class="dropdown nav_dropdown">
             <button class="nav_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Рішення
+              {{'NAV.SOLUTIONS' | translate}}
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -21,7 +21,7 @@
           </div>
           <div class="dropdown nav_dropdown">
             <button class="nav_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Тарифи
+              {{'NAV.TARIFFS' | translate}}
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -29,9 +29,9 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </div>
-          <button class="nav_btn">Блог</button>
-          <button class="nav_btn">Про нас</button>
-          <button class="nav_btn">Контакти</button>
+          <button class="nav_btn">{{'NAV.BLOG' | translate}}</button>
+          <button class="nav_btn">{{'NAV.ABOUT' | translate}}</button>
+          <button class="nav_btn">{{'NAV.CONTACTS' | translate}}</button>
         </nav>
         <div class="dropdown nav_dropdown"  >
           <button  class="nav_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,10 +39,8 @@
           </button>
           <ul class="dropdown-menu"  >
             <li><a class="dropdown-item"
-
                    *ngFor="let t of optionsList"
-                   #select (click)="onChange(t)"
-            >
+                   (click)="onChange(t)">
               {{t.LocaleString}}
             </a>
             </li>
@@ -55,20 +53,19 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="nav-mobile">
     <ul class="list">
-      <li class="list_item list_item__header">Рішення</li>
-      <li class="list_item">Брендам</li>
-      <li class="list_item">Рітейлерам</li>
+      <li class="list_item list_item__header"> {{'NAV.SOLUTIONS' | translate}}</li>
+      <li class="list_item">{{'NAV.FORBRANDS' | translate}}</li>
+      <li class="list_item">{{'NAV.FORRETAILERS' | translate}}</li>
     </ul>
     <ul class="list">
-      <li class="list_item list_item__header">Тарифи</li>
-      <li class="list_item">Брендам</li>
-      <li class="list_item">Рітейлерам</li>
+      <li class="list_item list_item__header">{{'NAV.TARIFFS' | translate}}</li>
+      <li class="list_item">{{'NAV.FORBRANDS' | translate}}</li>
+      <li class="list_item">{{'NAV.FORRETAILERS' | translate}}</li>
     </ul>
     <ul class="list list__links">
-      <li class="list_item">Блог</li>
-      <li class="list_item">Про нас</li>
-      <li class="list_item">Контакти</li>
+      <li class="list_item">{{'NAV.BLOG' | translate}}</li>
+      <li class="list_item">{{'NAV.ABOUT' | translate}}</li>
+      <li class="list_item">{{'NAV.CONTACTS' | translate}}</li>
     </ul>
   </div>
-
 </div>
