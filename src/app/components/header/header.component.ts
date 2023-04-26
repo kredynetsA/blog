@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocaleService} from "../../services/locale.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   currentLocale: any = {};
   optionsList: any = [];
 
-  constructor(private localeService: LocaleService) { }
+  constructor(private localeService: LocaleService, public translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.localeOptions = this.localeService.localeOptions;
@@ -23,8 +24,8 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-
   onChange(t: any) {
+    this.translateService.use(this.curentLang);
     this.curentLang = t.LocaleString
     this.optionsList = this.localeOptions.filter((x) => {
       return x.LocaleString != t.LocaleString
