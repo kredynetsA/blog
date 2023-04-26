@@ -1,0 +1,13 @@
+<section class="blog-page">
+  <div class="container" >
+    <ul class="list">
+      <li class="list_item" *ngFor="let item of posts" routerLink="/blog-page">
+        <img class="list_img" src="{{item.MainImage}}">
+        <div class="list_desc">
+          <a routerLink="/{{item.slug}}" href="{{item.slug}}">{{item.Title}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="blog-btn company-button company-button__grey" *ngIf="loadDataBtn" (click)="loadData()">Більше статей</button>
+</section>
