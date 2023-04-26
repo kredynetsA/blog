@@ -33,13 +33,19 @@
           <button class="nav_btn">Про нас</button>
           <button class="nav_btn">Контакти</button>
         </nav>
-        <div class="dropdown nav_dropdown">
-          <button class="nav_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            UA
+        <div class="dropdown nav_dropdown"  >
+          <button  class="nav_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{curentLang}}
           </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">RU</a></li>
-            <li><a class="dropdown-item" href="#"> EN</a></li>
+          <ul class="dropdown-menu"  >
+            <li><a class="dropdown-item"
+
+                   *ngFor="let t of optionsList"
+                   #select (click)="onChange(t)"
+            >
+              {{t.LocaleString}}
+            </a>
+            </li>
           </ul>
         </div>
       </div>

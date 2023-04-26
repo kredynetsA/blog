@@ -1,13 +1,13 @@
 <section class="blog-page">
-  <div class="container">
+  <div class="container" >
     <ul class="list">
-      <li class="list_item" *ngFor="let d of data" routerLink="/blog-page">
-        <img class="list_img" src="https://panel.7-price.com/Content/image/blog/what-do-you-need-to-know-before-pricing-you-product.png">
+      <li class="list_item" *ngFor="let item of posts" routerLink="/blog-page">
+        <img class="list_img" src="{{item.MainImage}}">
         <div class="list_desc">
-          <a routerLink="/blog-page">Що вам потрібно знати, перш ніж визначити ціну вашого продукту?{{d}}</a>
+          <a routerLink="/{{item.slug}}" href="{{item.slug}}">{{item.Title}}</a>
         </div>
       </li>
     </ul>
   </div>
-  <button class="blog-btn company-button company-button__grey">Більше статей</button>
+  <button class="blog-btn company-button company-button__grey" *ngIf="loadDataBtn" (click)="loadData()">Більше статей</button>
 </section>

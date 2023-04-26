@@ -32,6 +32,7 @@
     font-weight: bold;
     font-size: inherit;
     margin-right: 15px;
+    text-transform: uppercase;
     &:hover {
       color: $color-accent;
     }
@@ -56,6 +57,7 @@
   font-size: inherit;
   color: $color-dark-blue;
   margin: 10px 0;
+  text-transform: uppercase;
 }
 
 .list {
