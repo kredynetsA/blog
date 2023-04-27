@@ -9,6 +9,7 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { SanitizePipe } from './pages/sanitize.pipe';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -18,7 +19,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
     AppComponent,
     HeaderComponent,
     BlogComponent,
-    BlogPageComponent
+    BlogPageComponent,
+    SanitizePipe
   ],
   imports: [
     BrowserModule,

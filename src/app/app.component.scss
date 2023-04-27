@@ -9,6 +9,8 @@
   &_info {
     color: $color-font-white;
     align-self: center;
+    display: flex;
+    justify-content: center;
   }
   &_title {
     font-size: 28px;
@@ -37,4 +39,15 @@
     }
   }
 }
-
+ .btn-back {
+   background: transparent;
+   border: none;
+   color: white;
+   margin-right: 10px;
+   i {
+     font-size: 40px;
+   }
+   &:hover {
+     color: $color-accent;
+   }
+ }
