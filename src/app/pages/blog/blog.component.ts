@@ -32,6 +32,7 @@ export class BlogComponent implements OnInit, OnDestroy {
       this.getPosts(this.page, this.locale);
     })
     this.subscriptions.push(sub)
+    this.blogService.backBtn.next(false)
   }
   getPosts(page: number, locale: any) {
     let sub = this.blogService.getPosts(page, locale)
@@ -43,6 +44,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   loadData() {
+    this.blogService.backBtn.next(true)
     let locale = this.localeService.getCurrentLocale();
     let currentPage = this.pagination.current_page
     let lastPage = this.pagination.last_page

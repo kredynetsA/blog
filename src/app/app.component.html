@@ -3,10 +3,13 @@
   <div class="container">
     <div class="promo">
       <div class="promo_info">
-        <h1 class="promo_title">{{'BLOG.TITLE' | translate}}</h1>
-        <p class="promo_desc">{{'BLOG.DESC' | translate}}</p>
-        <button class="company-button company-button__accent">{{'BUTTON.SUBSCRIBE' | translate}}</button>
-        <button class="company-button">{{'BUTTON.ASK' | translate}}</button>
+        <button class="btn-back" routerLink="blog" *ngIf="backBtn"><i class="bi bi-arrow-left-circle"></i></button>
+        <div>
+          <h1 class="promo_title">{{'BLOG.TITLE' | translate}}</h1>
+          <p class="promo_desc">{{'BLOG.DESC' | translate}}</p>
+          <button class="company-button company-button__accent">{{'BUTTON.SUBSCRIBE' | translate}}</button>
+          <button class="company-button">{{'BUTTON.ASK' | translate}}</button>
+        </div>
       </div>
       <div class="promo_img">
         <img src="https://7-price.com/img/blogs/blog_img.png">

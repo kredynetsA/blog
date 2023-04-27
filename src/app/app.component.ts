@@ -1,24 +1,46 @@
-import {Component, OnDestroy} from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {LocaleService} from "./services/locale.service";
+import {NavigationStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy{
+export class AppComponent implements OnDestroy {
   title = 'blog';
-  subscription: any;
-  constructor(public translateService: TranslateService, private localeService: LocaleService) {
+  subscriptions: any[] = [];
+  backBtn?: boolean = false;
+  constructor(public translateService: TranslateService,
+              private localeService: LocaleService,
+              private router: Router
+              ) {
+   let sub = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url == '/blog') {
+          this.backBtn = false
+        } else {
+          this.backBtn = true
+        }
+      }
+    })
+    this.subscriptions.push(sub)
     const locale = this.localeService.getCurrentLocale();
     this.translateService.use(locale.LocaleString)
-
-    this.subscription = this.localeService.locale.subscribe((res) => {
+    let sub1 = this.localeService.locale.subscribe((res) => {
       this.translateService.use(res.LocaleString)
     });
+    this.subscriptions.push(sub1)
   }
+
+
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.subscriptions.forEach((sub: any) => {
+      sub.unsubscribe()
+    });
   }
 }
