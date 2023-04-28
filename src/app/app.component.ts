@@ -21,7 +21,8 @@ export class AppComponent implements OnDestroy {
               ) {
    let sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
-        if (event.url == '/blog') {
+        console.log(event)
+        if (event.url == '/blog' || event.url == '/') {
           this.backBtn = false
         } else {
           this.backBtn = true
